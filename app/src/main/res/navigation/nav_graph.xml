@@ -3,13 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity2">
+    app:startDestination="@id/allPostsFragment">
 
-    <fragment
-        android:id="@+id/mainActivity2"
-        android:name="com.peterchege.retrofitcrashcourse.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+
     <fragment
         android:id="@+id/allPostsFragment"
         android:name="com.peterchege.retrofitcrashcourse.ui.fragments.AllPostsFragment"
@@ -17,5 +13,10 @@
     <fragment
         android:id="@+id/singlePostFragment"
         android:name="com.peterchege.retrofitcrashcourse.ui.fragments.SinglePostFragment"
-        android:label="SinglePostFragment" />
+        android:label="SinglePostFragment" >
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

@@ -23,10 +23,7 @@ class AllPostsFragment : Fragment(R.layout.fragment_posts) {
 
     private lateinit var postsAdapter: PostsAdapter
 
-
-
-
-
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fetchPosts()

@@ -3,9 +3,12 @@ package com.peterchege.retrofitcrashcourse.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.peterchege.retrofitcrashcourse.R
 import com.peterchege.retrofitcrashcourse.databinding.ItemPostBinding
 import com.peterchege.retrofitcrashcourse.models.PostItem
 
@@ -46,7 +49,9 @@ class PostsAdapter : RecyclerView.Adapter<PostsAdapter.TodoViewHolder>() {
             postBody.text = post.body.substring(0,50)
         }
         holder.itemView.setOnClickListener {
-            Toast.makeText(holder.itemView.context,"Post Id : ${posts[position].id}",Toast.LENGTH_SHORT).show()
+            val bundle = bundleOf("id" to posts[position].id.toString())
+            it.findNavController().navigate(R.id.singlePostFragment,bundle)
+            //Toast.makeText(holder.itemView.context,"Post Id : ${posts[position].id}",Toast.LENGTH_SHORT).show()
         }
     }
 }

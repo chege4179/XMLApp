@@ -16,13 +16,6 @@ class MainActivity : AppCompatActivity() {
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val AllPostsFragment = AllPostsFragment()
-        val SinglePostFragment = SinglePostFragment()
-
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragment_container,AllPostsFragment)
-            commit()
-        }
 
     }
 
